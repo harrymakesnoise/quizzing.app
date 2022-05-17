@@ -1,0 +1,93 @@
+#live-leaderboard {
+  box-shadow                 : 2px 2px 4px black;
+  height                     : 0;
+  margin                     : 8mm;
+  position                   : relative;
+  transition-duration        : 0.3s;
+  transition-property        : height;
+  transition-timing-function : ease-in-out;
+}
+
+.ranking-item {
+  box-shadow                 : 0 0 0 black;
+  height                     : 20mm;
+  left                       : 0;
+  padding                    : 2mm 0;
+  opacity                    : 1;
+  overflow                   : hidden;
+  position                   : absolute;
+  transition-duration        : 0.3s;
+  transition-property        : border-radius, box-shadow, height, left, opacity, top;
+  transition-timing-function : ease-in-out;
+  width                      : 100%;
+  margin-top                 : -30px;
+  z-index                    : auto;
+}
+.ranking-item td {
+  background-color:#fff;
+  padding:20px;
+}
+.ranking-item .teamname {
+  width:100%;
+}
+
+.ranking-item_moving {
+  border-radius : 1.2mm;
+  box-shadow    : 6px 6px 12px black;
+  left          : -1mm;
+}
+
+.ranking-item_moving td {
+  border-top:0px;
+}
+
+.ranking-item-order, .ranking-item-userName, .ranking-item-score {
+  float       : left;
+  height      : 100%;
+  margin      : 0 2mm;
+  line-height : 16mm;
+  top         : 0;
+}
+
+.ranking-item-order {
+  background          : #cc0000;
+  border-radius       : 50%;
+  color               : white;
+  text-align          : center;
+  transition-duration : 0.3s;
+  transition-property : background;
+  width               : 16mm;
+}
+
+.ranking-item_movingDown .ranking-item-order { background : #990000; }
+
+.ranking-item_movingUp .ranking-item-order { background : #ff0000; }
+
+.ranking-item-userName {
+  font-size     : 16px;
+  overflow      : hidden;
+  text-overflow : ellipsis;
+  white-space   : nowrap;
+  width         : 60%;
+  font-family   : Century Gothic;
+}
+
+.ranking-item-score { max-width : 16mm; }
+
+@media screen and (max-width: 600px) {
+  body { font-size : 3mm; }
+
+  #ranking { margin : 4mm; }
+
+  .ranking-item { height : 9mm; }
+
+  .ranking-item-order, .ranking-item-userName, .ranking-item-score {
+    line-height : 9mm;
+  }
+
+  .ranking-item-order { width : 9mm; }
+
+  .ranking-item-userName { font-size : 4.5mm; }
+
+  .ranking-item-score { max-width : 9mm; }
+}

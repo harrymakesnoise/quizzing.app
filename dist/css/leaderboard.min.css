@@ -1,0 +1,101 @@
+#live-leaderboard {
+  height                     : 0;
+  margin                     : 0mm;
+  position                   : relative;
+  transition-duration        : 0.3s;
+  transition-property        : height;
+  transition-timing-function : ease-in-out;
+}
+
+.ranking-item {
+  box-shadow                 : 0 0 0 black;
+  height                     : 14mm;
+  left                       : 0;
+  padding                    : 2mm 0;
+  opacity                    : 1;
+  overflow                   : hidden;
+  position                   : absolute;
+  transition-duration        : 0.3s;
+  transition-property        : border-radius, box-shadow, height, left, opacity, top;
+  transition-timing-function : ease-in-out;
+  width                      : 100%;
+  z-index                    : auto;
+  margin-left:0;
+  margin-right:0;
+  border-bottom:1px dashed #ccc;
+}
+
+.ranking-item_moving {
+  border-radius : 1.2mm;
+  box-shadow    : 6px 6px 12px black;
+  left          : -1mm;
+}
+
+.ranking-item-order, .ranking-item-userName, .ranking-item-score {
+  height      : 100%;
+  line-height : 10mm;
+  top         : 0;
+}
+
+.ranking-item-order {
+  text-align          : center;
+  vertical-align      : middle;
+}
+
+.ranking-item_movingDown { background : #dc3545; color:#fff;}
+
+.ranking-item_movingUp { background : #28a745; color:#fff;}
+
+.ranking-item-userName {
+  font-size     : 16px;
+  overflow      : hidden;
+  text-overflow : ellipsis;
+  white-space   : nowrap;
+}
+
+@media screen and (max-width: 600px) {
+  body { font-size : 3mm; }
+
+  #ranking { margin : 4mm; }
+
+  .ranking-item { height : 9mm; }
+
+  .ranking-item-order, .ranking-item-userName, .ranking-item-score {
+    line-height : 9mm;
+  }
+
+  .ranking-item-order { width : 9mm; }
+
+  .ranking-item-userName { font-size : 4.5mm; }
+
+  .ranking-item-score { max-width : 9mm; }
+}
+
+circle {
+  stroke: #fff; 
+  stroke-width: 2px;
+  stroke-opacity: 1;
+  fill:#dc3545;
+}
+
+.pulse {
+  fill: #dc3545;
+  fill-opacity: 0;
+  transform-origin: 50% 50%;
+  animation-duration: 2s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  from {
+    stroke-width: 3px;
+    stroke-opacity: 1;
+    transform: scale(0.3);
+  }
+  to {
+    stroke-width: 0;
+    stroke-opacity: 0;
+    transform: scale(1.3);
+  }
+}
