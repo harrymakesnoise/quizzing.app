@@ -36,3 +36,16 @@ docs_html/
 TODO
 test.html
 ad.js
+server/*
+.well-known/*
+build/*
+corporate/*
+docs/*
+examplepages/*
+server2/*
+sites/0/*
+sites/1/*
+sites/2/*
+sites/3/*
+sites/4/*
+sites/legacy-leaderboards/*
